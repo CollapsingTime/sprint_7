@@ -53,3 +53,14 @@
 - скрипт с заменой ключевых наименований - `sprint_7/knowledge_base_generator.py`
 - маппер с замененными названиями - `sprint_7/terms_map.json`
 - итоговая база знаний - `sprint_7/knowledge_base`
+
+# Задание 3. Создание векторного индекса базы знаний
+
+- Модель: intfloat/multilingual-e5-small, 384 измерения
+- База знаний: `knowledge_base/`, 30 документов
+- Индекс: FAISS `IndexFlatIP`, 30 чанков по 100–300 слов
+- Время генерации эмбеддингов: ~3 секунды
+
+## Пример поиска
+
+![Image 1](Task3/screenshots/image_1.png)
