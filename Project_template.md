@@ -64,3 +64,29 @@
 ## Пример поиска
 
 ![Image 1](Task3/screenshots/image_1.png)
+
+# Задание 4. Реализация RAG-бота
+
+RAG-пайплайн на FAISS-индексе из задания 3 через Ollama (`qwen2.5:7b`).
+
+## 1. Репозиторий с модулем RAG - sprint_7/Task4
+
+## 2. Запускаемый endpoint
+```bash
+ollama serve
+cd Task4 && docker compose up -d --build
+```
+
+отправка запроса `POST /ask` на `http://localhost:8000`
+
+## 3. Примеры успешных диалогов
+
+![Пример 1](Task4/screenshots/success_1.png)
+
+![Пример 2](Task4/screenshots/success_2.png)
+
+![Пример 3](Task4/screenshots/success_3.png)
+
+## 4. Примеры случаев отказа «Я не знаю»
+
+![Отказ](Task4/screenshots/refusal_1.png)

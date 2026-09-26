@@ -1,0 +1,21 @@
+services:
+  bot:
+    build: .
+    image: rag-task4
+    container_name: rag-task4-bot
+    network_mode: host
+    environment:
+      RAG_INDEX_DIR: /app/index
+      RAG_MODEL_CACHE: /app/models
+      RAG_LLM_BASE_URL: ${RAG_LLM_BASE_URL:-http://localhost:11434/v1}
+      RAG_LLM_MODEL: ${RAG_LLM_MODEL:-qwen2.5:7b}
+      RAG_TOP_K: ${RAG_TOP_K:-3}
+      RAG_MIN_SCORE: ${RAG_MIN_SCORE:-0.80}
+      RAG_TEMPERATURE: ${RAG_TEMPERATURE:-0.1}
+      RAG_MAX_TOKENS: ${RAG_MAX_TOKENS:-700}
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    volumes:
+      - ../Task3/index:/app/index:ro
+      - ../Task3/models:/app/models:ro
+    restart: unless-stopped
