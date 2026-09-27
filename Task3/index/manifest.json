@@ -1,0 +1,159 @@
+{
+  "created_at": "2026-09-25T12:04:41.166504+00:00",
+  "document_count": 30,
+  "chunk_count": 30,
+  "chunking": {
+    "chunk_size": 2200,
+    "chunk_overlap": 200,
+    "separators": [
+      "\n\n",
+      "\n",
+      ". ",
+      "! ",
+      "? ",
+      " ",
+      ""
+    ],
+    "word_count_range": {
+      "min": 100,
+      "max": 300
+    }
+  },
+  "embedding": {
+    "model": "intfloat/multilingual-e5-small",
+    "dimension": 384,
+    "normalized": true,
+    "query_prefix": "query: ",
+    "passage_prefix": "passage: "
+  },
+  "index": {
+    "type": "IndexFlatIP",
+    "file": "faiss.index"
+  },
+  "timing": {
+    "encoding_seconds": 3.286,
+    "total_seconds": 5.919
+  },
+  "sources": [
+    {
+      "source_path": "knowledge_base/алдераан.md",
+      "sha256": "c94291d761421e4c880964fc460824c28ac69ac72b12a5617cd507268b010607"
+    },
+    {
+      "source_path": "knowledge_base/бен_соло.md",
+      "sha256": "eed67b8224ee4c877f89a99d52fe6f7ab0df2d8aaf5307766d50627b96a1fa44"
+    },
+    {
+      "source_path": "knowledge_base/беспин.md",
+      "sha256": "cb08f5d5b5fc40ba4cfb762d30e922af2fa387fbfc443bb9905f637624b59643"
+    },
+    {
+      "source_path": "knowledge_base/битва_при_явине.md",
+      "sha256": "f96e6b89c8a870746eedd88e0f1fd1c22f3ce5a409a578059b540eb7a66b81ed"
+    },
+    {
+      "source_path": "knowledge_base/боба_фетт.md",
+      "sha256": "c96d613522129423952c5f9eaf2322ff5adbc6af6c05adf8c8f3649e8d3f9c12"
+    },
+    {
+      "source_path": "knowledge_base/вуки.md",
+      "sha256": "49a31fa32030a0f64bbfbc2990c1cd32abceff78c74d879d42d907a22d030d4d"
+    },
+    {
+      "source_path": "knowledge_base/дагоба.md",
+      "sha256": "9d65312f269eeb90ad4c7a43ac78537ee646a5c1116651873bb84630d2e41d6a"
+    },
+    {
+      "source_path": "knowledge_base/дарт_мол.md",
+      "sha256": "a1b8e391b44eb52a2433aea0c0802b29a9f7a1bcd755a6bf1d5bd12b55482ba9"
+    },
+    {
+      "source_path": "knowledge_base/звезда_смерти.md",
+      "sha256": "ddb327adc3e122f1969dbcaf1d456b5ae1c0eeeed0242154746d71c44f63b8ab"
+    },
+    {
+      "source_path": "knowledge_base/звёздный_разрушитель.md",
+      "sha256": "22412d88548ba1ac2f24e32a47e4e006ea5ee95d1f304426c28d8e01743223f6"
+    },
+    {
+      "source_path": "knowledge_base/йода.md",
+      "sha256": "ff7cccb909fd8919a7fe3599cb91aa52fa7a9ed82717e33200d366b57d265e44"
+    },
+    {
+      "source_path": "knowledge_base/камино.md",
+      "sha256": "147fdcc84fe0efa7b29cb42aa85e9f0f1aeecc57cd727f9795aff3d387a21ec6"
+    },
+    {
+      "source_path": "knowledge_base/кашиик.md",
+      "sha256": "407eb672a80d3b09ecf8c8d72f6376c3650eb807cd0cc423f77ccff7476c879a"
+    },
+    {
+      "source_path": "knowledge_base/корусант.md",
+      "sha256": "419171b8f699b60b43de54d2353dfbfc178f1e5aa549a1425b21cdf0b7c14f00"
+    },
+    {
+      "source_path": "knowledge_base/лея_органасоло.md",
+      "sha256": "6bb92de3c31d527aa942938ca00deaf37e9df285b9e55d8f6944197f8a108095"
+    },
+    {
+      "source_path": "knowledge_base/люк_скайуокер.md",
+      "sha256": "65b4668d6b57cfce603edab579cd1301bff9791566a8eaadc4228e19c90edf4e"
+    },
+    {
+      "source_path": "knowledge_base/мустафар.md",
+      "sha256": "fed324eccf9d304b7d0e422f6c2e0f481214bd1db7bd81660070cce959bd4df9"
+    },
+    {
+      "source_path": "knowledge_base/набу.md",
+      "sha256": "77ce98764fdbb302e16c7d0e22be84938353d38f26ec129e8912409f24699052"
+    },
+    {
+      "source_path": "knowledge_base/обиван_кеноби.md",
+      "sha256": "9e9a7b1476193feb3574b06932727b6ab82ec8d82ad5c9a14dc1052e02d029c8"
+    },
+    {
+      "source_path": "knowledge_base/падме_амидала.md",
+      "sha256": "0a8b6b9a872c291e17bbdbbdfbbac23ffd9b211c542c0786c05a5196a2ac5571"
+    },
+    {
+      "source_path": "knowledge_base/палпатин.md",
+      "sha256": "334bc3829c783a26eedff6553ca7c0181652868a20e623ec61fd4f3ac084211c"
+    },
+    {
+      "source_path": "knowledge_base/приказ_66.md",
+      "sha256": "f6dd883ca2fb9cd5a4d9ba143a7321c97453ab8ca2eaa0c08cccd5b3ce7a3cb0"
+    },
+    {
+      "source_path": "knowledge_base/световой_меч.md",
+      "sha256": "a2456deef9c4c090d52645c940c21cf277301053411a91f668bb00081680fc31"
+    },
+    {
+      "source_path": "knowledge_base/татуин.md",
+      "sha256": "3d51d7cdc32859fc74a9648a0f4f113a1e11069643ea3a3cc6623a1ef7774322"
+    },
+    {
+      "source_path": "knowledge_base/тысячелетний_сокол.md",
+      "sha256": "7276cfb66ef3acc4e0423bd992625e83f1a9d09ba556367535802d1970bade6f"
+    },
+    {
+      "source_path": "knowledge_base/хан_соло.md",
+      "sha256": "abc91853c459aac7ec265978c63d74a0092a3df735507d970effa5ec60438fac"
+    },
+    {
+      "source_path": "knowledge_base/хатты.md",
+      "sha256": "2b28adb7885b2f06796c17de567d2441aa4d5d1f7e6cada43b9f080a33cb178a"
+    },
+    {
+      "source_path": "knowledge_base/хот.md",
+      "sha256": "97e93bacd23246944b248b8ed86901a1a9b2a1130c9ba9ecd1eb004704a9ebfd"
+    },
+    {
+      "source_path": "knowledge_base/чубакка.md",
+      "sha256": "bb051839f6e9bef658042a64b98052e22e2e33ed3778b03af1c27b09645097f2"
+    },
+    {
+      "source_path": "knowledge_base/энакин_скайуокер.md",
+      "sha256": "4781e0a7e5e32c9a54577682ae773efbca1b1431ed91d6d40ce2d03e416b4f60"
+    }
+  ]
+}
