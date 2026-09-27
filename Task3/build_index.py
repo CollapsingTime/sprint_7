@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import time
 from pathlib import Path
@@ -13,8 +14,14 @@ KNOWLEDGE_BASE = ROOT / "knowledge_base"
 if not KNOWLEDGE_BASE.exists():
     KNOWLEDGE_BASE = ROOT.parent / "knowledge_base"
 SOURCE_ROOT = ROOT.parent if KNOWLEDGE_BASE == ROOT.parent / "knowledge_base" else ROOT
-OUTPUT_DIR = ROOT / "index"
-MODEL_CACHE = ROOT / "models"
+INDEX_KNOWLEDGE_BASES = [
+    Path(part)
+    for part in os.getenv("INDEX_KNOWLEDGE_BASES", "").split(os.pathsep)
+    if part
+] or [KNOWLEDGE_BASE]
+OUTPUT_DIR = Path(os.getenv("INDEX_OUTPUT_DIR", ROOT / "index"))
+MODEL_CACHE = Path(os.getenv("INDEX_MODEL_CACHE", ROOT / "models"))
+ALLOW_OVERWRITE = os.getenv("INDEX_OVERWRITE", "").lower() in {"1", "true", "yes"}
 MODEL_NAME = "intfloat/multilingual-e5-small"
 PASSAGE_PREFIX = "passage: "
 QUERY_PREFIX = "query: "
@@ -24,9 +31,12 @@ MIN_WORDS = 100
 MAX_WORDS = 300
 SEPARATORS = ["\n\n", "\n", ". ", "! ", "? ", " ", ""]
 
-def load_documents():
+def load_documents(paths=None):
+    paths = paths or sorted(
+        path for knowledge_base in INDEX_KNOWLEDGE_BASES for path in knowledge_base.iterdir()
+    )
     documents = []
-    for path in sorted(KNOWLEDGE_BASE.iterdir()):
+    for path in paths:
         if path.suffix.lower() not in {".md", ".txt"}:
             continue
         text = path.read_text(encoding="utf-8")
@@ -78,7 +88,7 @@ def make_chunks(documents):
     return chunks
 
 def main():
-    if OUTPUT_DIR.exists() and any(OUTPUT_DIR.iterdir()):
+    if not ALLOW_OVERWRITE and OUTPUT_DIR.exists() and any(OUTPUT_DIR.iterdir()):
         raise FileExistsError(f"Output directory is not empty: {OUTPUT_DIR}")
     started = time.perf_counter()
     documents = load_documents()

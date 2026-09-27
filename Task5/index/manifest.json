@@ -1,0 +1,13 @@
+{
+  "embedding": {
+    "model": "intfloat/multilingual-e5-small",
+    "dimension": 384
+  },
+  "document_count": 31,
+  "chunk_count": 32,
+  "word_count_range": {
+    "min": 100,
+    "max": 300
+  },
+  "encoding_seconds": 6.221
+}
